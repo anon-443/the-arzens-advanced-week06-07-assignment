@@ -1,0 +1,6 @@
+# Generated SIEM blocklist sample
+# Format: indicator|type|risk_score|confidence
+8.8.8.8|ip|0|0.25
+1.1.1.1|ip|0|0.25
+malware.example.com|domain|0|0.25
+44d88612fea8a8f36de82e1278abb02f|hash|0|0.25

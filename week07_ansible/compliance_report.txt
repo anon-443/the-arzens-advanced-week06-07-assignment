@@ -1,0 +1,12 @@
+ARZENS CIS-ALIGNED COMPLIANCE SAMPLE
+Generated: 2026-09-13
+
+[PASS] SSH root login disabled
+[PASS] SSH password authentication disabled
+[PASS] UFW default deny incoming
+[PASS] UFW allows only SSH/HTTP/HTTPS
+[PASS] fail2ban enabled
+[PASS] auditd enabled
+[PASS] unattended-upgrades configured
+[INFO] Manual review required: filesystem mounts, package inventory, cloud IAM, backup restoration
+Summary: 7 passed, 0 failed, 4 manual review items

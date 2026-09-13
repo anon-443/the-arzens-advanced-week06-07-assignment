@@ -1,0 +1,6 @@
+---
+common_timezone: Etc/UTC
+common_packages:
+  - unattended-upgrades
+  - apt-listchanges
+  - rsyslog

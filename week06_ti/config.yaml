@@ -1,0 +1,20 @@
+# API keys are intentionally blank. Prefer environment variables in production.
+providers:
+  virustotal:
+    api_key: ""
+    base_url: "https://www.virustotal.com/api/v3"
+    requests_per_minute: 4
+  abuseipdb:
+    api_key: ""
+    base_url: "https://api.abuseipdb.com/api/v2"
+    requests_per_day: 1000
+  otx:
+    api_key: ""
+    base_url: "https://otx.alienvault.com/api/v1"
+    requests_per_minute: 60
+cache:
+  path: "cache.json"
+  ttl_seconds: 86400
+runtime:
+  timeout_seconds: 8
+  demo_mode: true

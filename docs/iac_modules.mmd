@@ -1,0 +1,11 @@
+flowchart TD
+  R[Root environment<br/>main.tf variables.tf outputs.tf] --> N[network module<br/>VPC subnets routes]
+  R --> S[security module<br/>SG IAM KMS policies]
+  R --> C[compute module<br/>EC2 launch configuration]
+  R --> D[data module<br/>private encrypted S3]
+  P[Policy checks + scanners] --> R
+  T[Remote encrypted state + lock] <--> R
+  R --> O[Outputs to inventory]
+  O --> A[Ansible inventory]
+  A --> AR[Roles: common security compliance]
+  AR --> V[Compliance report + audit logs]

@@ -1,0 +1,6 @@
+---
+- name: Apply security-only controls
+  hosts: servers
+  become: true
+  roles:
+    - security

@@ -1,0 +1,11 @@
+flowchart LR
+  A[Internal telemetry<br/>EDR DNS Proxy Email] --> B[Normalizer + Validator]
+  X[External feeds<br/>VirusTotal AbuseIPDB OTX MISP] --> B
+  B --> C[Priority Queue + Rate Limiters]
+  C --> D[Enrichment Engine]
+  D <--> E[(TTL Cache)]
+  D --> F[(IOC Database)]
+  F --> G[Risk + Confidence<br/>Lifecycle Engine]
+  G --> H[SIEM / Case Management]
+  G --> I[Controlled Blocklist]
+  G --> J[Analyst Report + Alerts]

@@ -1,0 +1,21 @@
+---
+- name: Check SSH root login setting
+  ansible.builtin.shell: "sshd -T | grep -i '^permitrootlogin no$'"
+  register: root_login_check
+  changed_when: false
+  failed_when: false
+- name: Check password authentication setting
+  ansible.builtin.shell: "sshd -T | grep -i '^passwordauthentication no$'"
+  register: password_check
+  changed_when: false
+  failed_when: false
+- name: Write compliance report
+  ansible.builtin.copy:
+    dest: /var/log/arzens-compliance-report.txt
+    mode: '0640'
+    content: |
+      ARZENS CIS-ALIGNED COMPLIANCE REPORT
+      Generated: {{ ansible_date_time.iso8601 }}
+      [{{ 'PASS' if root_login_check.rc == 0 else 'FAIL' }}] SSH root login disabled
+      [{{ 'PASS' if password_check.rc == 0 else 'FAIL' }}] SSH password authentication disabled
+      [PASS] Playbook completed without fatal errors

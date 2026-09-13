@@ -1,0 +1,13 @@
+Terraform will perform the following actions:
+
+  # aws_vpc.main will be created
+  # aws_subnet.public will be created
+  # aws_security_group.web will be created with ingress 22 from admin_cidr, 80/443 from the internet
+  # aws_s3_bucket.artifacts will be created
+  # aws_s3_bucket_public_access_block.artifacts will be created
+  # aws_s3_bucket_server_side_encryption_configuration.artifacts will be created
+  # aws_s3_bucket_versioning.artifacts will be created
+  # aws_instance.web will be created with encrypted gp3 root volume and IMDSv2 required
+
+Plan: 8 to add, 0 to change, 0 to destroy.
+Note: This is a representative plan. Run terraform plan against the target account before deployment.
